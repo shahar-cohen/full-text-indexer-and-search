@@ -1,0 +1,70 @@
+
+=============================
+=      File description     =
+=============================
+TextSearcher - the main file of the program. parses the arguments and generally runs the show.
+
+
+---------- text and data structures ----------
+
+Corpuses - a class representing the body of works that are processed.
+
+Entry - a class representing a single body of work and hold references to blocks of it.
+
+Block - a class representing a portion of the body of work, and hold memebers related to it.
+
+Word - a class representing a word in one of the blocks that is a match to (one of) the query
+words. It holds pointers and information relating to the word.
+
+WordResult - a class representing a search result of a search strategy that searches one
+whole phrase.
+
+MultiWordResult - a class representing a search result of a search strategy that searches
+a few separate words. It holds a score that rates the proximity the words and other members relating to the
+result.
+
+ResultsAggregator - A class to organize Word objects by the Block they were found in while storing which
+query word led to them being found.
+
+WordAndQuery - A class that stores a Word Object and query string that match eachother.
+
+----------indexers----------
+
+Aindexer - The abstract class describing the necessary methods and common implementations of all indexing data
+structures.
+
+IndexerFactory -  A factory class for AIndexer objects
+
+DictionaryIndexer - a class that indexes the words (that are sufficiantly meaningful) of the all of the
+entries to a dictionary, to be used for later
+
+NaiveIndexer - A "naive" indexer. This approach forgoes actually preprocessing the file, and simply loads the
+text and searches directly on it.
+
+NaiveIndexerRK - public class of a naive search Indexer for the naive search strategy based on Rabin Karp
+algorithm.
+
+----------- parsers --------------
+
+IparsingRule - An interface describing the contract any parser should maintain, as well as possible default
+methods.
+
+ParsingRuleFactory - a factory for IparsingRule objets
+
+SimpleParsingRule - a class implementing a simple text parsing rule.
+
+STmovieParsingRule - a parsing rule used to parse ST movie scripts
+STtvSeriesParsingRule - a parsing rule used to parse ST episode scripts
+
+----------------- utils ---------------------
+
+MD5 - A name of a famous Gangsta, lets see if you are actually reading owr shit
+( a print used to see if a file was changed )
+
+QueryMatchesNotFoundException - an Exception raised when no results are found or when empty query given
+
+Stemmer
+
+Stopwords
+
+WrongMD5ChecksumException
