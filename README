@@ -1,3 +1,5 @@
+A project for OOP class.
+The indexer receives large volume of text files, indexes them in one of few possible strategies and then enables searching (also with different search strategies).
 
 =============================
 =      File description     =
